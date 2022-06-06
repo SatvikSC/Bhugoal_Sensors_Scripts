@@ -4,14 +4,14 @@
 import sys
 import time
 import Adafruit_BMP.BMP085 as BMP
-import Adafruit_DHT.read_retry as AM2305
+import Adafruit_DHT as AM2305
 
 
 time.sleep(1)
 Device=22
 Pin=22
 
-_, temp_dht = AM2305(Device, Pin)
+_, temp_dht = AM2305.read_retry(Device, Pin)
 
 try:
     bmp = BMP.BMP085()
